@@ -182,7 +182,7 @@
                             A ton of melted mozzarella and parmesan cheese is smothered over the buffalo chicken pizza.
                              The classic buffalo chicken wing flavor of this pizza is created by tossing chopped cooked chicken with buffalo sauce.
                           </p>
-                          <a class="btn btn-primary btn-sm text-uppercase" href="#services"><span><i class="fas fa-shopping-cart"></i></span>  Order Now</a>
+                          <a class="btn btn-primary btn-sm text-uppercase" href="login.html"> Order Now</a>
                         </div>
                       </div>
                     </div>
@@ -196,7 +196,7 @@
                             black olives, mozzarella, Parmesan, and basil, 
                             it's an authentic pizza par excellence.
                           </p>
-                          <a class="btn btn-primary btn-sm text-uppercase" href="#services"><span><i class="fas fa-shopping-cart"></i></span>  Order Now</a>
+                          <a class="btn btn-primary btn-sm text-uppercase" href="login.html">  Order Now</a>
                         </div>
                       </div>
                     </div>
@@ -217,7 +217,7 @@
                         <h5 class="card-title" style="text-align: center; color: white;">Hawaiian Pizza</h5>
                       <div class="card-body text-center">
                         <p class="card-text" style="text-align: center; color: white;">Canadian bacon and pineapple</p>
-                        <a class="btn btn-primary btn-sm text-uppercase" href="#services"><span><i class="fas fa-shopping-cart"></i></span>  Order Now</a>
+                        <a class="btn btn-primary btn-sm text-uppercase" href="login.html">  Order Now</a>
                       </div>
                       
                     </div>
@@ -226,7 +226,7 @@
                         <h5 class="card-title" style="text-align: center; color: white;">Vegetable Pizza</h5>
                       <div class="card-body text-center">
                         <p class="card-text" style="text-align: center; color: white;">Green pepper, onion, mushroom, and tomato</p>
-                        <a class="btn btn-primary btn-sm text-uppercase" href="#services"><span><i class="fas fa-shopping-cart"></i></span>  Order Now</a>
+                        <a class="btn btn-primary btn-sm text-uppercase" href="login.html">  Order Now</a>
                       </div>
                      
                     </div>
@@ -235,7 +235,7 @@
                         <h5 class="card-title" style="text-align: center; color: white;">Western Pizza</h5>
                       <div class="card-body text-center">
                         <p class="card-text" style="text-align: center; color: white;">Sausage, bacon, onion, cheddar, mozarella, sweet and tangy bbq sauce</p>
-                        <a class="btn btn-primary btn-sm text-uppercase" href="#services"><span><i class="fas fa-shopping-cart"></i></span>  Order Now</a>
+                        <a class="btn btn-primary btn-sm text-uppercase" href="login.html">  Order Now</a>
                       </div>
                       
                     </div>
@@ -244,7 +244,7 @@
                         <h5 class="card-title" style="text-align: center; color: white;">Meat Pizza</h5>
                       <div class="card-body text-center">
                         <p class="card-text" style="text-align: center; color: white;">Sausage, pepperoni, bacon, and Canadian bacon</p>
-                        <a class="btn btn-primary btn-sm text-uppercase" href="#services"><span><i class="fas fa-shopping-cart"></i></span>  Order Now</a>
+                        <a class="btn btn-primary btn-sm text-uppercase" href="login.html">  Order Now</a>
                       </div>
                     </div>
                   </div>
@@ -347,82 +347,5 @@
         </footer>
         
     
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <script src="js/cart.js"></script>
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
-    <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/656ac744bfb79148e599413d/1hgkhkpeb';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
-
-  <script>// Check if a logged-in user exists in session storage
-      const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
-      
-      if (loggedInUser) {
-      const userDetailsContainer = document.getElementById('userDetails');
-      userDetailsContainer.innerHTML = `${loggedInUser.fname}`;
-    } 
-    </script>
-    <script>
-        // Function to sign out the user
-        function signOut() {
-          // Remove the loggedInUser item from session storage
-          sessionStorage.removeItem('loggedInUser');
-          // Redirect to the login page
-          window.location.href = 'index.html';
-        }
-    </script>
-
-    <script>
-        // Function to check if a user is logged in
-        function checkLoggedInUser() {
-          const loggedInUser = sessionStorage.getItem('loggedInUser');
-          const signInOutButton = document.getElementById('signInOutButton');
-
-          if (loggedInUser) {
-            signInOutButton.textContent = 'Sign Out';
-          } else {
-            signInOutButton.textContent = 'Sign In';
-          }
-        }
-
-        // Function to sign out the user
-        function signOut() {
-          sessionStorage.removeItem('loggedInUser');
-          checkLoggedInUser(); // Update the button text after sign out
-          window.location.href = 'login.html';
-        }
-
-        // Function to toggle sign-in/sign-out based on current state
-        function toggleSignInOut() {
-          const loggedInUser = sessionStorage.getItem('loggedInUser');
-
-          if (loggedInUser) {
-            signOut(); // If user is logged in, trigger sign-out process
-            window.location.href = 'index.html';
-          } else {
-            // Redirect to the login page or perform sign-in action
-            window.location.href = 'login.html';
-            // Add additional logic for sign-in if needed
-          }
-        }
-
-        // Call checkLoggedInUser initially to set the button text on page load
-        checkLoggedInUser();
-
-    </script>
     </body>
 </html>
