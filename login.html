@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 400px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    input, button {
+      margin-bottom: 15px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #FD9D3E;
+      color: #fff;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #FD9D3E;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>User Login</h1>
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+      <span id="loginError" style="color: red;"></span>
+      <!-- Login error message -->
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+  
+      const loginError = document.getElementById('loginError');
+  
+      // Retrieve users from localStorage
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+  
+      // Check if the user exists and credentials match
+      const user = users.find(u => u.username === username && u.password === password);
+  
+      if (!user) {
+        loginError.textContent = 'Invalid username or password.';
+        return;
+      } else {
+        loginError.textContent = ''; // Clear error message
+  
+        // Store user details in sessionStorage to display on the index page
+        sessionStorage.setItem('loggedInUser', JSON.stringify(user));
+  
+        // Redirect to index page after successful login
+        window.location.href = 'index.html'; // Replace 'index.html' with your desired index page
+      }
+    });
+  </script>
+  
+</body>
+</html>

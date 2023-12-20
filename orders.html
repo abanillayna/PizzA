@@ -1,0 +1,47 @@
+<!-- orders.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Orders</title>
+</head>
+<body>
+  <div id="cartItems"></div>
+  <p id="totalAmount"></p>
+
+  <script>
+    window.onload = function() {
+      const savedCart = localStorage.getItem('cartData');
+      if (savedCart) {
+        const cart = JSON.parse(savedCart);
+        displayCartItems(cart);
+      } else {
+        document.getElementById("cartItems").innerHTML = "No items in the cart";
+      }
+    };
+
+    function displayCartItems(cart) {
+      let total = 0;
+      let cartTable = '<table><tr><th>Image</th><th>Title</th><th>Price</th><th>Quantity</th></tr>';
+
+      cart.forEach((item) => {
+        const { image, title, price, quantity } = item;
+        const itemTotal = price * quantity;
+        total += itemTotal;
+
+        cartTable += `
+          <tr>
+            <td><img src="${image}" alt="${title}" style="width: 50px; height: auto;"></td>
+            <td>${title}</td>
+            <td>Php ${price}.00</td>
+            <td>${quantity}</td>
+          </tr>`;
+      });
+
+      cartTable += '</table>';
+      document.getElementById("cartItems").innerHTML = cartTable;
+      document.getElementById("totalAmount").innerHTML = `Total: Php ${total}.00`;
+    }
+  </script>
+</body>
+</html>
