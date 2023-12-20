@@ -350,7 +350,18 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        
+        <script>
+          function toggleSignInOut() {
+          const loggedInUser = sessionStorage.getItem('loggedInUser');
+
+          if (loggedInUser) {
+            signOut(); // If user is logged in, trigger sign-out process
+            window.location.href = 'userpage.html';
+          } else {
+            // Redirect to the login page or perform sign-in action
+            window.location.href = 'login.html';
+            // Add 
+        </script>
         
 
    
